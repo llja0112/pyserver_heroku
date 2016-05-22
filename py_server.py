@@ -14,7 +14,7 @@ def init():
 	sys.stdout.flush()
 	context = zmq.Context()
 	socket = context.socket(zmq.REP)
-#	socket.bind("tcp://0.0.0.0:5555")
+	socket.bind("tcp://0.0.0.0:5555")
 #	This has to change later at some point
 
 	while True:
