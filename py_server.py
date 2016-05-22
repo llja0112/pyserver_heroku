@@ -6,12 +6,16 @@ import zmq
 import eliza
 #import botOrNot
 import nltk
+import sys
 
 def init():
+
 	print("start pyserver")
+	sys.stdout.flush()
 	context = zmq.Context()
 	socket = context.socket(zmq.REP)
-	socket.bind("tcp://127.0.0.1:5555")
+#	socket.bind("tcp://0.0.0.0:5555")
+#	This has to change later at some point
 
 	while True:
 		message = socket.recv()
