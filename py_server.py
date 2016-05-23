@@ -7,6 +7,7 @@ import eliza
 #import botOrNot
 import nltk
 import sys
+import socket as SOCKET
 
 def init():
 
@@ -14,7 +15,19 @@ def init():
 	sys.stdout.flush()
 	context = zmq.Context()
 	socket = context.socket(zmq.REP)
+#	socket.bind("ws://http://guarded-spire-37973.herokuapp.com:80/data/webserver")
+#	hostname = "localhost"
+#	hostname="http://guarded-spire-37973.herokuapp.com"
+#	ip_address = SOCKET.gethostbyname(hostname)
+#	print ip_address
+#	socket.bind("tcp://guarded-spire-37973.herokuapp.com/5555/webserver")
+
+#	socket.bind("tcp://*:5555/chat")
 	socket.bind("tcp://0.0.0.0:5555")
+
+#	x = zmq.socket(socket)
+#	print x
+#	socket.bind("tcp://0.0.0.0:5555")
 #	This has to change later at some point
 
 	while True:
@@ -51,7 +64,7 @@ def init():
 
 		time.sleep(0)
 #		socket.send(b":"+eliza_response)
-#		socket.send(b":"+"-".join(message))
+		socket.send(b":"+"-".join(message))
 
 init()
 
