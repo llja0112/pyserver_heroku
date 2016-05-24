@@ -4,8 +4,9 @@
 var request = require('request');
 
 // Alternate between localhost and remote address
+// Comment out either to test either local or remote pyserver
 var serverURL = 'http://localhost:5000';
-var serverURL = 'http://localhost:5000';
+var serverURL = 'https://enigmatic-harbor-98725.herokuapp.com';
 
 sendMessage('hello');
 sendMessage('How are you?');
