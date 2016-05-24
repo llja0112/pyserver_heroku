@@ -8,10 +8,10 @@ def init():
 	global reflections
 	global psychobabble
 
-	with open('./reflections.json') as fi:
+	with open('./dict/reflections.json') as fi:
 		reflections = json.load(fi)
 
-	with open('./psychobabble.txt', 'r') as fi:
+	with open('./dict/psychobabble.txt', 'r') as fi:
 		psychobabble = eval(fi.read())
 
 def analyse(from_human):
